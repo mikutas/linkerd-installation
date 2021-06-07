@@ -30,3 +30,10 @@ sponge linkerd2/values.yaml
 ```
 helmfile -f helmfile.yaml apply
 ```
+
+[Getting Started | Linkerd](https://linkerd.io/2.10/getting-started/)
+
+```
+curl -sL https://run.linkerd.io/emojivoto.yml \
+  | kubectl apply -f -
+```
