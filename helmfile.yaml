@@ -5,4 +5,4 @@ helmDefaults:
 
 helmfiles:
   - path: linkerd2/helmfile.yaml
-  - path: linkerd-viz/helmfile.yaml
+#  - path: linkerd-viz/helmfile.yaml
