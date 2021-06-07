@@ -33,6 +33,8 @@ helmfile -f helmfile.yaml apply
 
 [Getting Started | Linkerd](https://linkerd.io/2.10/getting-started/)
 
+demo app
+
 ```
 curl -sL https://run.linkerd.io/emojivoto.yml \
   | kubectl apply -f -
