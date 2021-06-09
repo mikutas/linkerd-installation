@@ -21,6 +21,8 @@ openssl x509 -noout -dates | rg "notAfter" | sed -e 's/notAfter=\(.*\)$/"\1"/' |
 TZ='GMT' xargs -I{} date -d {} +"\"%Y-%m-%dT%H:%M:%SZ\"") -i linkerd2/values.yaml
 ```
 
+You may not like unrelated diffs by yq, then use `git add -p` or edit `identity.issuer.crtExpiry` manually from the first.
+
 [Installing Linkerd with Helm | Linkerd](https://linkerd.io/2.10/tasks/install-helm/)
 
 [roboll/helmfile: Deploy Kubernetes Helm Charts](https://github.com/roboll/helmfile)
