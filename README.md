@@ -39,3 +39,9 @@ demo app
 curl -sL https://run.linkerd.io/emojivoto.yml \
   | kubectl apply -f -
 ```
+
+```
+kubectl get -n emojivoto deploy -o yaml \
+  | linkerd inject - \
+  | kubectl apply -f -
+```
