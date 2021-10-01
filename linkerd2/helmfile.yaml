@@ -7,10 +7,11 @@ releases:
   namespace: linkerd
   createNamespace: false
   chart: linkerd/linkerd2
-  version: 2.10.2
+  version: 2.11.0
   values:
   - values.yaml
   #- values-ha.yaml
+  - crtexpiry.yaml
   set:
   - name: identityTrustAnchorsPEM
     file: ca.crt

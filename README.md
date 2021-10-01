@@ -18,7 +18,7 @@ step certificate create identity.linkerd.cluster.local linkerd2/issuer.crt linke
 ```fish
 yq e .identity.issuer.crtExpiry=(cat linkerd2/issuer.crt | \
 openssl x509 -noout -dates | rg "notAfter" | sed -e 's/notAfter=\(.*\)$/"\1"/' | \
-TZ='GMT' xargs -I{} date -d {} +"\"%Y-%m-%dT%H:%M:%SZ\"") -i linkerd2/values.yaml
+TZ='GMT' xargs -I{} date -d {} +"\"%Y-%m-%dT%H:%M:%SZ\"") -i linkerd2/crtexpiry.yaml
 ```
 
 You may not like unrelated diffs by yq, then use `git add -p` or edit `identity.issuer.crtExpiry` manually from the first.
