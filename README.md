@@ -1,6 +1,6 @@
 # linkerd-installation
 
-[Generating your own mTLS root certificates | Linkerd](https://linkerd.io/2.10/tasks/generate-certificates/)
+[Generating your own mTLS root certificates | Linkerd](https://linkerd.io/2.11/tasks/generate-certificates/)
 
 example by fish
 
@@ -23,7 +23,7 @@ TZ='GMT' xargs -I{} date -d {} +"\"%Y-%m-%dT%H:%M:%SZ\"") -i linkerd2/crtexpiry.
 
 You may not like unrelated diffs by yq, then use `git add -p` or edit `identity.issuer.crtExpiry` manually from the first.
 
-[Installing Linkerd with Helm | Linkerd](https://linkerd.io/2.10/tasks/install-helm/)
+[Installing Linkerd with Helm | Linkerd](https://linkerd.io/2.11/tasks/install-helm/)
 
 [roboll/helmfile: Deploy Kubernetes Helm Charts](https://github.com/roboll/helmfile)
 
@@ -31,7 +31,7 @@ You may not like unrelated diffs by yq, then use `git add -p` or edit `identity.
 helmfile -f helmfile.yaml apply
 ```
 
-[Getting Started | Linkerd](https://linkerd.io/2.10/getting-started/)
+[Getting Started | Linkerd](https://linkerd.io/2.11/getting-started/)
 
 demo app
 
