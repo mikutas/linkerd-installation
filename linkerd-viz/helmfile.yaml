@@ -14,6 +14,10 @@ releases:
   - events: ["presync"]
     showlogs: true
     command: kubectl
+    args: ["wait", "--for=condition=available", "deploy/linkerd-proxy-injector", "-n", "linkerd", "--timeout=3m"]
+  - events: ["presync"]
+    showlogs: true
+    command: kubectl
     args: ["apply", "-f", "ns-linkerd-viz.yaml"]
   - events: ["postuninstall"]
     showlogs: true
