@@ -1,6 +1,6 @@
 # linkerd-installation
 
-[Generating your own mTLS root certificates | Linkerd](https://linkerd.io/2.11/tasks/generate-certificates/)
+## Generating certificates
 
 example by fish
 
@@ -21,19 +21,13 @@ openssl x509 -noout -dates | rg "notAfter" | sed -e 's/notAfter=\(.*\)$/"\1"/' |
 TZ='GMT' xargs -I{} date -d {} +"\"%Y-%m-%dT%H:%M:%SZ\"") -i linkerd2/crtexpiry.yaml
 ```
 
-You may not like unrelated diffs by yq, then use `git add -p` or edit `identity.issuer.crtExpiry` manually from the first.
-
-[Installing Linkerd with Helm | Linkerd](https://linkerd.io/2.11/tasks/install-helm/)
-
-[roboll/helmfile: Deploy Kubernetes Helm Charts](https://github.com/roboll/helmfile)
+## Install
 
 ```
 helmfile -f helmfile.yaml apply
 ```
 
-[Getting Started | Linkerd](https://linkerd.io/2.11/getting-started/)
-
-demo app
+## Demo app
 
 ```
 curl -sL https://run.linkerd.io/emojivoto.yml \
@@ -45,3 +39,18 @@ kubectl get -n emojivoto deploy -o yaml \
   | linkerd inject - \
   | kubectl apply -f -
 ```
+
+## Dashboard
+
+```
+linkerd viz dashboard
+```
+
+---
+
+cf.
+
+- [Generating your own mTLS root certificates | Linkerd](https://linkerd.io/2.11/tasks/generate-certificates/)
+- [Installing Linkerd with Helm | Linkerd](https://linkerd.io/2.11/tasks/install-helm/)
+- [roboll/helmfile: Deploy Kubernetes Helm Charts](https://github.com/roboll/helmfile)
+- [Getting Started | Linkerd](https://linkerd.io/2.11/getting-started/)
