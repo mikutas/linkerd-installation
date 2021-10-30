@@ -22,7 +22,7 @@ controlPlaneTracing: false
 # -- namespace to send control plane traces to
 controlPlaneTracingNamespace: linkerd-jaeger
 # -- control plane version. See Proxy section for proxy version
-linkerdVersion: stable-2.11.0
+linkerdVersion: stable-2.11.1
 # -- Control plane namespace
 namespace: linkerd
 # -- enables the use of EndpointSlice informers for the destination service;
@@ -231,9 +231,6 @@ identity:
 
     # -- Amount of time to allow for clock skew within a Linkerd cluster
     clockSkewAllowance: 20s
-
-    # -- Expiration timestamp for the issuer certificate. It must be provided during install. Must match the expiry date in crtPEM
-    crtExpiry:
 
     # -- Amount of time for which the Identity issuer should certify identity
     issuanceLifetime: 24h0m0s
