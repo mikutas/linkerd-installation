@@ -15,12 +15,6 @@ step certificate create identity.linkerd.cluster.local linkerd2/issuer.crt linke
 --ca linkerd2/ca.crt --ca-key linkerd2/ca.key
 ```
 
-```fish
-yq e .identity.issuer.crtExpiry=(cat linkerd2/issuer.crt | \
-openssl x509 -noout -dates | rg "notAfter" | sed -e 's/notAfter=\(.*\)$/"\1"/' | \
-TZ='GMT' xargs -I{} date -d {} +"\"%Y-%m-%dT%H:%M:%SZ\"") -i linkerd2/crtexpiry.yaml
-```
-
 ## Install
 
 ```
