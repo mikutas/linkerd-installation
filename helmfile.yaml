@@ -4,5 +4,6 @@ helmDefaults:
   atomic: true
 
 helmfiles:
-- path: linkerd2/helmfile.yaml
+- path: linkerd-crds/helmfile.yaml
+- path: linkerd-control-plane/helmfile.yaml
 - path: linkerd-viz/helmfile.yaml

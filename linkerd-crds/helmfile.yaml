@@ -1,0 +1,10 @@
+repositories:
+- name: linkerd-edge
+  url: https://helm.linkerd.io/edge
+
+releases:
+- name: linkerd-crds
+  namespace: linkerd
+  createNamespace: true
+  chart: linkerd-edge/linkerd-crds
+  version: 1.0.0-edge

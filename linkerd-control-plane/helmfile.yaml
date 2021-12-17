@@ -1,0 +1,19 @@
+repositories:
+- name: linkerd-edge
+  url: https://helm.linkerd.io/edge
+
+releases:
+- name: linkerd-control-plane
+  namespace: linkerd
+  createNamespace: false
+  chart: linkerd-edge/linkerd-control-plane
+  version: 1.0.0-edge
+  set:
+  - name: identityTrustAnchorsPEM
+    file: ca.crt
+  - name: identity.issuer.tls.crtPEM
+    file: issuer.crt
+  - name: identity.issuer.tls.keyPEM
+    file: issuer.key
+  needs:
+  - linkerd-crds

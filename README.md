@@ -24,14 +24,15 @@ helmfile -f helmfile.yaml apply
 ## Demo app
 
 ```
-curl -sL https://run.linkerd.io/emojivoto.yml \
-  | kubectl apply -f -
+kubectl apply -f https://run.linkerd.io/emojivoto.yml
 ```
 
 ```
-kubectl get -n emojivoto deploy -o yaml \
-  | linkerd inject - \
-  | kubectl apply -f -
+kubectl annotate ns emojivoto linkerd.io/inject=enabled
+```
+
+```
+kubectl rollout restart deploy -n emojivoto
 ```
 
 ## Dashboard

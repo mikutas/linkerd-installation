@@ -1,25 +1,21 @@
 repositories:
-- name: linkerd
-  url: https://helm.linkerd.io/stable
+- name: linkerd-edge
+  url: https://helm.linkerd.io/edge
 
 releases:
 - name: linkerd-viz
   namespace: linkerd-viz
-  createNamespace: false
-  chart: linkerd/linkerd-viz
-  version: 2.11.1
-  values:
-  - values.yaml
+  createNamespace: true
+  chart: linkerd-edge/linkerd-viz
+  version: "21.12.3"
+  needs:
+  - linkerd-control-plane
   hooks:
   - events: ["presync"]
     showlogs: true
     command: kubectl
     args: ["wait", "--for=condition=available", "deploy/linkerd-proxy-injector", "-n", "linkerd", "--timeout=3m"]
-  - events: ["presync"]
-    showlogs: true
-    command: kubectl
-    args: ["apply", "-f", "ns-linkerd-viz.yaml"]
-  - events: ["postuninstall"]
-    showlogs: true
-    command: kubectl
-    args: ["delete", "-f", "ns-linkerd-viz.yaml"]
+  # - events: ["postuninstall"]
+  #   showlogs: true
+  #   command: kubectl
+  #   args: ["delete", "-f", "ns-linkerd-viz.yaml"]
