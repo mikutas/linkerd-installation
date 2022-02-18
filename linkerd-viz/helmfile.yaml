@@ -8,8 +8,6 @@ releases:
   createNamespace: true
   chart: linkerd-edge/linkerd-viz
   version: "21.12.4"
-  needs:
-  - linkerd-control-plane
   hooks:
   - events: ["presync"]
     showlogs: true
