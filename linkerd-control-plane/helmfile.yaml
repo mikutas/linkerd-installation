@@ -15,5 +15,3 @@ releases:
     file: issuer.crt
   - name: identity.issuer.tls.keyPEM
     file: issuer.key
-  needs:
-  - linkerd-crds
