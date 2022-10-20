@@ -9,8 +9,8 @@ releases:
   namespace: linkerd
   createNamespace: false
   chart: linkerd/linkerd-control-plane
-  # https://github.com/linkerd/linkerd2/blob/stable-2.12.1/charts/linkerd-control-plane/Chart.yaml
-  version: 1.9.3
+  # https://github.com/linkerd/linkerd2/blob/stable-2.12.2/charts/linkerd-control-plane/Chart.yaml
+  version: 1.9.4
   set:
   - name: identityTrustAnchorsPEM
     file: ca.crt
