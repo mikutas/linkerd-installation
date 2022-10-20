@@ -26,11 +26,4 @@ jobs:
 
       - run: helmfile -f helmfile.yaml sync
 
-      # https://linkerd.io/2.12/getting-started/
-      - run: curl --proto '=https' --tlsv1.2 -sSfL https://run.linkerd.io/install | sh
-        env:
-          LINKERD2_VERSION: stable-2.12.2
-
-      - run: echo $HOME/.linkerd2/bin >> $GITHUB_PATH
-
       - run: linkerd check
