@@ -1,0 +1,36 @@
+name: test
+
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Create k8s Kind Cluster
+        uses: helm/kind-action@v1.4.0
+
+      - uses: aquaproj/aqua-installer@v1.1.2
+        with:
+          aqua_version: v1.21.0
+
+      - run: |
+          step certificate create root.linkerd.cluster.local linkerd-control-plane/ca.crt linkerd-control-plane/ca.key \
+          --profile root-ca --no-password --insecure
+
+      - run: |
+          step certificate create identity.linkerd.cluster.local linkerd-control-plane/issuer.crt linkerd-control-plane/issuer.key \
+          --profile intermediate-ca --not-after 8760h --no-password --insecure \
+          --ca linkerd-control-plane/ca.crt --ca-key linkerd-control-plane/ca.key
+
+      - run: helmfile -f helmfile.yaml sync
+
+      # https://linkerd.io/2.12/getting-started/
+      - run: curl --proto '=https' --tlsv1.2 -sSfL https://run.linkerd.io/install | sh
+        env:
+          LINKERD2_VERSION: stable-2.12.2
+
+      - run: echo $HOME/.linkerd2/bin >> $GITHUB_PATH
+
+      - run: linkerd check
