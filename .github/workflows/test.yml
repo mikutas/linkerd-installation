@@ -13,7 +13,7 @@ jobs:
 
       - uses: aquaproj/aqua-installer@v1.1.2
         with:
-          aqua_version: v1.21.0
+          aqua_version: v1.23.1
 
       - run: |
           step certificate create root.linkerd.cluster.local linkerd-control-plane/ca.crt linkerd-control-plane/ca.key \
