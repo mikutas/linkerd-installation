@@ -8,6 +8,5 @@
       "matchPackagePatterns": ["aqua-registry"],
       "automerge": true
     }
-  ],
-  "platformAutomerge": true
+  ]
 }
