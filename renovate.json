@@ -6,7 +6,8 @@
   "packageRules": [
     {
       "matchPackagePatterns": ["aqua-registry"],
-      "automerge": true
+      "automerge": true,
+      "extends": ["schedule:earlyMondays"]
     }
   ],
   "platformAutomerge": true
