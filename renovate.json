@@ -6,7 +6,7 @@
   ],
   "packageRules": [
     {
-      "matchPackagePatterns": ["aqua-registry", "aqua-renovate-config"],
+      "matchPackagePatterns": ["aquaproj"],
       "automerge": true,
       "extends": ["schedule:earlyMondays"]
     }
