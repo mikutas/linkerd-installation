@@ -12,4 +12,4 @@ packages:
 - name: helm/helm@v3.10.3
 - name: helmfile/helmfile@v0.150.0
 - name: linkerd/linkerd2@stable-2.12.2
-- name: smallstep/cli@v0.23.1
+- name: smallstep/cli@v0.23.2
