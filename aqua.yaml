@@ -9,7 +9,7 @@ registries:
 - type: standard
   ref: v3.127.0 # renovate: depName=aquaproj/aqua-registry
 packages:
-- name: helm/helm@v3.11.0
+- name: helm/helm@v3.11.1
 - name: helmfile/helmfile@v0.150.0
 - name: linkerd/linkerd2@stable-2.12.2
 - name: smallstep/cli@v0.23.2
