@@ -9,6 +9,11 @@
       "matchPackagePatterns": ["aquaproj"],
       "automerge": true,
       "extends": ["schedule:earlyMondays"]
+    },
+    {
+      "matchPackageNames": ["linkerd/linkerd2"],
+      // https://docs.renovatebot.com/modules/versioning/
+      "versioning": "regex:(?<compatibility>stable|edge)-(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)?"
     }
   ],
   "platformAutomerge": true,
