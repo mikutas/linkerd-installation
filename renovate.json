@@ -11,5 +11,9 @@
       "extends": ["schedule:earlyMondays"]
     }
   ],
-  "platformAutomerge": true
+  "platformAutomerge": true,
+  "registryAliases": {
+    "linkerd": "https://helm.linkerd.io/stable",
+    "linkerd-edge": "https://helm.linkerd.io/edge"
+  }
 }
