@@ -10,6 +10,6 @@ registries:
   ref: v3.146.0 # renovate: depName=aquaproj/aqua-registry
 packages:
 - name: helm/helm@v3.11.2
-- name: helmfile/helmfile@v0.151.0
+- name: helmfile/helmfile@v0.152.0
 - name: linkerd/linkerd2@stable-2.12.4
 - name: smallstep/cli@v0.23.4
