@@ -28,7 +28,7 @@
         "helmfile\\.yaml"
       ],
       "matchStrings": [
-        "linkerd\\/linkerd2\\/blob\\/(?<currentValue>.*)\\/"
+        "linkerd\\/linkerd2\\/blob\\/(?<currentValue>(?<compatibility>stable|edge)-(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)?)"
       ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "linkerd/linkerd2"
