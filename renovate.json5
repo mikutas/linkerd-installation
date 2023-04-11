@@ -17,6 +17,18 @@
     }
   ],
   "platformAutomerge": true,
+  "regexManagers": [
+    {
+      "fileMatch": [
+        "helmfile\\.yaml"
+      ],
+      "matchStrings": [
+        "linkerd\\/linkerd2\\/blob\\/(?<currentValue>.*)\\/"
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "linkerd/linkerd2"
+    }
+  ],
   // https://docs.renovatebot.com/modules/manager/helmfile/
   "registryAliases": {
     "linkerd": "https://helm.linkerd.io/stable",
