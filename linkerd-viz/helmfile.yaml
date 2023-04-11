@@ -10,7 +10,7 @@ releases:
   createNamespace: true
   chart: linkerd/linkerd-viz
   # https://github.com/linkerd/linkerd2/blob/stable-2.12.4/viz/charts/linkerd-viz/Chart.yaml
-  version: 30.3.6
+  version: 30.8.0
   hooks:
   - events: ["presync"]
     showlogs: true
