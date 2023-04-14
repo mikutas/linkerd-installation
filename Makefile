@@ -1,5 +1,5 @@
 cluster:
-	k3d cluster create
+	k3d cluster create -p "8081:80@loadbalancer"
 
 ca:
 	step certificate create root.linkerd.cluster.local linkerd-control-plane/ca.crt linkerd-control-plane/ca.key \
