@@ -11,7 +11,7 @@ jobs:
       - name: Create k8s Kind Cluster
         uses: helm/kind-action@v1.5.0
 
-      - uses: aquaproj/aqua-installer@v2.0.2
+      - uses: aquaproj/aqua-installer@v2.1.1
         with:
           aqua_version: v1.37.2
 
