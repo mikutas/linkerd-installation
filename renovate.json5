@@ -1,6 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
+    ":prConcurrentLimitNone",
+    ":prHourlyLimitNone",
     ":timezone(Asia/Tokyo)",
     "github>aquaproj/aqua-renovate-config#1.5.2"
   ],
