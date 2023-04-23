@@ -10,7 +10,7 @@
     {
       "matchPackagePatterns": ["aquaproj"],
       "automerge": true,
-      "extends": ["schedule:earlyMondays"]
+      "extends": ["schedule:weekends"]
     },
     {
       "matchPackageNames": ["linkerd/linkerd2"],
