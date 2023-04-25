@@ -11,5 +11,5 @@ registries:
 packages:
 - name: helm/helm@v3.11.3
 - name: helmfile/helmfile@v0.153.1
-- name: linkerd/linkerd2@stable-2.13.1
+- name: linkerd/linkerd2@stable-2.13.2
 - name: smallstep/cli@v0.24.3
