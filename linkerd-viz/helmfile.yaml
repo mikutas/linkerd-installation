@@ -15,7 +15,7 @@ releases:
   - events: ["presync"]
     showlogs: true
     command: kubectl
-    args: ["wait", "deploy/linkerd-proxy-injector", "-n", "linkerd", "--for condition=available", "--timeout=3m"]
+    args: ["wait", "deploy/linkerd-proxy-injector", "-n=linkerd", "--for=condition=available", "--timeout=3m"]
   # - events: ["postsync"]
   #   showlogs: true
   #   command: kubectl
