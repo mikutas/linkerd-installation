@@ -26,6 +26,6 @@ jobs:
 
       - run: helmfile -f helmfile.yaml sync
 
-      - run: kubectl wait deploy -A --for condition=Available=True -l app.kubernetes.io/part-of=Linkerd --timeout 60s
+      - run: kubectl wait deploy -A -l app.kubernetes.io/part-of=Linkerd --for condition=available --timeout 3m
 
       - run: linkerd check
