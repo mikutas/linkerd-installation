@@ -29,3 +29,5 @@ jobs:
       - run: kubectl wait deploy -A -l app.kubernetes.io/part-of=Linkerd --for condition=available --timeout 3m
 
       - run: linkerd check
+        env:
+          AQUA_X_SYS_EXEC: false
