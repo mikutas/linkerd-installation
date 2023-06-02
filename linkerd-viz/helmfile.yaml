@@ -9,8 +9,8 @@ releases:
   namespace: linkerd-viz
   createNamespace: true
   chart: linkerd/linkerd-viz
-  # https://github.com/linkerd/linkerd2/blob/stable-2.13.3/viz/charts/linkerd-viz/Chart.yaml
-  version: 30.8.3
+  # https://github.com/linkerd/linkerd2/blob/stable-2.13.4/viz/charts/linkerd-viz/Chart.yaml
+  version: 30.8.4
   hooks:
   - events: ["presync"]
     showlogs: true
