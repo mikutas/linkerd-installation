@@ -31,3 +31,28 @@ jobs:
       - run: linkerd check
         env:
           AQUA_X_SYS_EXEC: false
+
+  diff:
+    strategy:
+      matrix:
+        chart: [linkerd-control-plane, linkerd-crds, linkerd-viz]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: aquaproj/aqua-installer@v2.1.2
+        with:
+          aqua_version: v2.10.1
+
+      - run: |
+          helmfile -f helmfile.yaml template --selector name=${{ matrix.chart }} > /tmp/pr.yaml
+
+      - uses: actions/checkout@v3
+        with:
+          ref: main
+
+      - run: |
+          helmfile -f helmfile.yaml template --selector name=${{ matrix.chart }} > /tmp/main.yaml
+
+      - run: |
+          diff /tmp/main.yaml /tmp/pr.yaml --color=always || true
