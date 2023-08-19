@@ -44,11 +44,17 @@ jobs:
         with:
           aqua_version: v2.10.1
 
+      - if: matrix.chart == 'linkerd-control-plane'
+        run: |
+          make ca
+          make issuer
+
       - run: |
           helmfile -f helmfile.yaml template --selector name=${{ matrix.chart }} > /tmp/pr.yaml
 
       - uses: actions/checkout@v3
         with:
+          clean: false
           ref: main
 
       - run: |
