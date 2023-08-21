@@ -1,5 +1,9 @@
+# https://k3d.io/v5.5.2/usage/exposing_services/
 cluster:
 	k3d cluster create -p "8081:80@loadbalancer"
+
+destroy:
+	k3d cluster delete
 
 ca:
 	step certificate create root.linkerd.cluster.local linkerd-control-plane/ca.crt linkerd-control-plane/ca.key \
@@ -20,6 +24,3 @@ emojivoto:
 
 dashboard:
 	linkerd viz dashboard
-
-destroy:
-	k3d cluster delete
