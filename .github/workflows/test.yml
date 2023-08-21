@@ -15,11 +15,13 @@ jobs:
         with:
           aqua_version: v2.10.1
 
-      - run: |
-          make ca
-          make issuer
+      - run: just ca
 
-      - run: helmfile -f helmfile.yaml sync
+      - run: just issuer
+
+      - run: helm plugin install https://github.com/databus23/helm-diff
+
+      - run: just linkerd
 
       - run: kubectl wait deploy -A -l app.kubernetes.io/part-of=Linkerd --for condition=available --timeout 3m
 
@@ -41,8 +43,8 @@ jobs:
 
       - if: matrix.chart == 'linkerd-control-plane'
         run: |
-          make ca
-          make issuer
+          just ca
+          just issuer
 
       - run: |
           helmfile -f helmfile.yaml template --selector name=${{ matrix.chart }} > /tmp/pr.yaml
