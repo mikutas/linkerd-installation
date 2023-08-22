@@ -20,6 +20,7 @@ linkerd:
 emojivoto:
 	kubectl apply -f https://run.linkerd.io/emojivoto.yml && \
 	kubectl annotate ns emojivoto linkerd.io/inject=enabled && \
+	kubectl apply -f emojivoto/ingress.yaml && \
 	kubectl rollout restart deploy -n emojivoto
 
 dashboard:
