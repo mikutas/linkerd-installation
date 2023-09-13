@@ -21,7 +21,7 @@ jobs:
 
       - run: helm plugin install https://github.com/databus23/helm-diff
 
-      - run: just linkerd
+      - run: just apply-all
 
       - run: kubectl wait deploy -A -l app.kubernetes.io/part-of=Linkerd --for condition=available --timeout 3m
 

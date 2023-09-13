@@ -1,8 +1,8 @@
 # https://k3d.io/v5.5.2/usage/exposing_services/
-cluster:
+create-cluster:
 	k3d cluster create -p "8081:80@loadbalancer"
 
-destroy:
+delete-cluster:
 	k3d cluster delete
 
 ca:
@@ -14,14 +14,23 @@ issuer:
 	--profile intermediate-ca --not-after 8760h --no-password --insecure \
 	--ca linkerd-control-plane/ca.crt --ca-key linkerd-control-plane/ca.key
 
-linkerd:
-	helmfile -f helmfile.yaml apply
-
 emojivoto:
 	kubectl apply -f https://run.linkerd.io/emojivoto.yml && \
 	kubectl annotate ns emojivoto linkerd.io/inject=enabled && \
 	kubectl apply -f emojivoto/ingress.yaml && \
 	kubectl rollout restart deploy -n emojivoto
 
-dashboard:
-	linkerd viz dashboard
+apply-all:
+	helmfile -f helmfile.yaml apply
+
+apply NAME:
+	helmfile -f helmfile.yaml apply --selector name={{ NAME }}
+
+diff NAME:
+	helmfile -f helmfile.yaml diff --selector name={{ NAME }}
+
+destroy NAME:
+	helmfile -f helmfile.yaml destroy --selector name={{ NAME }}
+
+template NAME:
+	helmfile -f helmfile.yaml template --selector name={{ NAME }}
