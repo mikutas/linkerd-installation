@@ -47,7 +47,7 @@ jobs:
           just issuer
 
       - run: |
-          helmfile -f helmfile.yaml template --selector name=${{ matrix.chart }} > /tmp/pr.yaml
+          just template ${{ matrix.chart }} > /tmp/pr.yaml
 
       - uses: actions/checkout@v4
         with:
@@ -55,7 +55,7 @@ jobs:
           ref: main
 
       - run: |
-          helmfile -f helmfile.yaml template --selector name=${{ matrix.chart }} > /tmp/main.yaml
+          just template ${{ matrix.chart }} > /tmp/main.yaml
 
       - run: |
           diff /tmp/main.yaml /tmp/pr.yaml --color=always || true
