@@ -3,7 +3,21 @@ name: test
 on: pull_request
 
 jobs:
+  certificates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: mikutas/my-aqua-installer@v0.2.0
+      - run: just ca
+      - run: just issuer
+      - uses: actions/upload-artifact@v3
+        with:
+          name: certs
+          path: |
+            linkerd-control-plane/*.crt
+            linkerd-control-plane/*.key
+
   test:
+    needs: ["certificates"]
     runs-on: ubuntu-latest
     steps:
       - uses: mikutas/my-aqua-installer@v0.2.0
@@ -11,11 +25,11 @@ jobs:
       - name: Create k8s Kind Cluster
         uses: helm/kind-action@v1.8.0
 
-      - run: just ca
-
-      - run: just issuer
-
       - run: helm plugin install https://github.com/databus23/helm-diff
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: certs
 
       - run: just apply-all
 
@@ -26,9 +40,12 @@ jobs:
           AQUA_X_SYS_EXEC: false
 
   diff:
+    needs: ["certificates"]
     strategy:
       matrix:
         release-name: [linkerd-control-plane, linkerd-crds, linkerd-viz]
     uses: mikutas/helmfiles/.github/workflows/reusable-diff.yml@main
     with:
       release-name: ${{ matrix.release-name }}
+      artifact-dl-enabled: true
+      artifact-dl-name: certs
