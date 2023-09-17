@@ -47,12 +47,10 @@ jobs:
         release-name: [linkerd-control-plane, linkerd-crds, linkerd-viz]
         include:
           - release-name: linkerd-control-plane
-            artifact-dl-enabled: true
             artifact-dl-name: certs
             artifact-dl-path: linkerd-control-plane
     uses: mikutas/helmfiles/.github/workflows/reusable-diff.yml@main
     with:
       release-name: ${{ matrix.release-name }}
-      artifact-dl-enabled: ${{ matrix.artifact-dl-enabled }}
       artifact-dl-name: ${{ matrix.artifact-dl-name }}
       artifact-dl-path: ${{ matrix.artifact-dl-path }}
