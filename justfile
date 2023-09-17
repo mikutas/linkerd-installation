@@ -23,6 +23,15 @@ emojivoto:
 apply-all:
 	helmfile -f helmfile.yaml apply
 
+diff-all:
+	helmfile -f helmfile.yaml diff
+
+destroy-all:
+	helmfile -f helmfile.yaml destroy
+
+template-all:
+	helmfile -f helmfile.yaml template
+
 apply NAME:
 	helmfile -f helmfile.yaml apply --selector name={{ NAME }}
 
