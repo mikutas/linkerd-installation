@@ -13,7 +13,7 @@ jobs:
 
       - uses: aquaproj/aqua-installer@v2.1.2
         with:
-          aqua_version: v2.10.1
+          aqua_version: v2.11.0
 
       - run: just ca
 
@@ -39,7 +39,7 @@ jobs:
 
       - uses: aquaproj/aqua-installer@v2.1.2
         with:
-          aqua_version: v2.10.1
+          aqua_version: v2.11.0
 
       - if: matrix.chart == 'linkerd-control-plane'
         run: |
