@@ -53,3 +53,6 @@ jobs:
     uses: mikutas/helmfiles/.github/workflows/reusable-diff.yml@main
     with:
       release-name: ${{ matrix.release-name }}
+      artifact-dl-enabled: ${{ matrix.artifact-dl-enabled }}
+      artifact-dl-name: ${{ matrix.artifact-dl-name }}
+      artifact-dl-path: ${{ matrix.artifact-dl-path }}
