@@ -6,7 +6,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: mikutas/my-aqua-installer@v0.1.0
+      - uses: mikutas/my-aqua-installer@v0.2.0
 
       - name: Create k8s Kind Cluster
         uses: helm/kind-action@v1.8.0
@@ -31,7 +31,7 @@ jobs:
         chart: [linkerd-control-plane, linkerd-crds, linkerd-viz]
     runs-on: ubuntu-latest
     steps:
-      - uses: mikutas/my-aqua-installer@v0.1.0
+      - uses: mikutas/my-aqua-installer@v0.2.0
 
       - if: matrix.chart == 'linkerd-control-plane'
         run: |
