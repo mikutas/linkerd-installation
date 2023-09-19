@@ -1,17 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    ":prConcurrentLimitNone",
-    ":prHourlyLimitNone",
-    ":timezone(Asia/Tokyo)",
-    "github>aquaproj/aqua-renovate-config#1.10.0"
+    "github>aquaproj/aqua-renovate-config#1.10.0",
+    "github>mikutas/my-renovate-config"
   ],
   "packageRules": [
-    {
-      "matchPackagePatterns": ["aquaproj"],
-      "automerge": true,
-      "extends": ["schedule:weekends"]
-    },
     {
       "matchPackageNames": ["linkerd/linkerd2"],
       // https://docs.renovatebot.com/modules/versioning/
@@ -23,7 +16,6 @@
       "groupName": "linkerd"
     }
   ],
-  "platformAutomerge": true,
   "regexManagers": [
     {
       "fileMatch": [
