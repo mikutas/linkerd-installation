@@ -9,5 +9,5 @@ releases:
   namespace: linkerd
   createNamespace: true
   chart: linkerd/linkerd-crds
-  # https://github.com/linkerd/linkerd2/blob/stable-2.14.0/charts/linkerd-crds/Chart.yaml
+  # https://github.com/linkerd/linkerd2/blob/stable-2.14.1/charts/linkerd-crds/Chart.yaml
   version: 1.8.0
