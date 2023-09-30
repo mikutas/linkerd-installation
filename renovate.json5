@@ -1,36 +1,41 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "github>aquaproj/aqua-renovate-config#1.11.0",
-    "github>mikutas/my-renovate-config"
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  extends: [
+    'github>aquaproj/aqua-renovate-config#1.11.0',
+    'github>mikutas/my-renovate-config',
   ],
-  "packageRules": [
+  packageRules: [
     {
-      "matchPackageNames": ["linkerd/linkerd2"],
-      // https://docs.renovatebot.com/modules/versioning/
-      "versioning": "regex:(?<compatibility>stable|edge)-(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)?"
+      matchPackageNames: [
+        'linkerd/linkerd2',
+      ],
+      versioning: 'regex:(?<compatibility>stable|edge)-(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)?',
     },
     {
-      "matchPackagePatterns": ["linkerd2", "linkerd-crds", "linkerd-control-plane", "linkerd-viz"],
-      // https://docs.renovatebot.com/noise-reduction/#package-grouping
-      "groupName": "linkerd"
-    }
+      matchPackagePatterns: [
+        'linkerd2',
+        'linkerd-crds',
+        'linkerd-control-plane',
+        'linkerd-viz',
+      ],
+      groupName: 'linkerd',
+    },
   ],
-  "regexManagers": [
+  customManagers: [
     {
-      "fileMatch": [
-        "helmfile\\.yaml"
+      customType: 'regex',
+      fileMatch: [
+        'helmfile\\.yaml',
       ],
-      "matchStrings": [
-        "linkerd\\/linkerd2\\/blob\\/(?<currentValue>(?<compatibility>stable|edge)-(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)?)"
+      matchStrings: [
+        'linkerd\\/linkerd2\\/blob\\/(?<currentValue>(?<compatibility>stable|edge)-(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)?)',
       ],
-      "datasourceTemplate": "github-releases",
-      "depNameTemplate": "linkerd/linkerd2"
-    }
+      datasourceTemplate: 'github-releases',
+      depNameTemplate: 'linkerd/linkerd2',
+    },
   ],
-  // https://docs.renovatebot.com/modules/manager/helmfile/
-  "registryAliases": {
-    "linkerd": "https://helm.linkerd.io/stable",
-    "linkerd-edge": "https://helm.linkerd.io/edge"
-  }
+  registryAliases: {
+    linkerd: 'https://helm.linkerd.io/stable',
+    'linkerd-edge': 'https://helm.linkerd.io/edge',
+  },
 }
