@@ -16,8 +16,9 @@
       "groupName": "linkerd"
     }
   ],
-  "regexManagers": [
+  "customManagers": [
     {
+      "customType": "regex",
       "fileMatch": [
         "helmfile\\.yaml"
       ],
