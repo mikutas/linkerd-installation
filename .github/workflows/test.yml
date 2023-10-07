@@ -54,3 +54,14 @@ jobs:
       release-name: ${{ matrix.release-name }}
       artifact-dl-name: ${{ matrix.artifact-dl-name }}
       artifact-dl-path: ${{ matrix.artifact-dl-path }}
+
+  status-check:
+    runs-on: ubuntu-latest
+    needs:
+    - certificates
+    - diff
+    - test
+    permissions: {}
+    if: failure()
+    steps:
+      - run: exit 1
