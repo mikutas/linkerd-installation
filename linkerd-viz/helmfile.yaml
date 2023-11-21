@@ -11,12 +11,15 @@ releases:
   chart: linkerd/linkerd-viz
   # https://github.com/linkerd/linkerd2/blob/stable-2.14.4/viz/charts/linkerd-viz/Chart.yaml
   version: 30.12.5
+  values:
+  - dashboard:
+      enforcedHostRegexp: linkerd-viz.local
   hooks:
   - events: ["presync"]
     showlogs: true
     command: kubectl
     args: ["wait", "deploy/linkerd-proxy-injector", "-n=linkerd", "--for=condition=available", "--timeout=3m"]
-  # - events: ["postsync"]
-  #   showlogs: true
-  #   command: kubectl
-  #   args: ["apply", "-f", "ingress.yaml"]
+  - events: ["postsync"]
+    showlogs: true
+    command: kubectl
+    args: ["apply", "-f", "ingress.yaml"]
