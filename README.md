@@ -15,31 +15,33 @@ step certificate create identity.linkerd.cluster.local linkerd-control-plane/iss
 
 ## Install
 
-```
-helmfile -f helmfile.yaml apply
+```shell
+just apply-all
 ```
 
 ## Demo app
 
-```
-kubectl apply -f https://run.linkerd.io/emojivoto.yml
-```
-
-```
-kubectl annotate ns emojivoto linkerd.io/inject=enabled
-```
-
-```
-kubectl rollout restart deploy -n emojivoto
+```shell
+just emojivoto
 ```
 
 ## Dashboard
 
-```
+```shell
 linkerd viz dashboard
 ```
 
 or open `http://linkerd-viz.local:54321`
+
+## [Dynamic Request Routing Tutorial](https://linkerd.io/2.14/tasks/configuring-dynamic-request-routing/)
+
+```shell
+just expect-backend-a
+```
+
+```shell
+just expect-backend-b
+```
 
 ---
 
