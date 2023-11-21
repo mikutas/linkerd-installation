@@ -43,3 +43,11 @@ destroy NAME:
 
 template NAME:
 	helmfile -f helmfile.yaml template --selector name={{ NAME }}
+
+# https://linkerd.io/2.14/tasks/configuring-dynamic-request-routing/
+expect-backend-a:
+	curl -sX POST podinfo.local:54321/echo | grep -o 'PODINFO_UI_MESSAGE=. backend'
+
+expect-backend-b:
+	curl -sX POST -H 'x-request-id: alternative' \
+	podinfo.local:54321/echo | grep -o 'PODINFO_UI_MESSAGE=. backend'
