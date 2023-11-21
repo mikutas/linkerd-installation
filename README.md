@@ -39,11 +39,14 @@ kubectl rollout restart deploy -n emojivoto
 linkerd viz dashboard
 ```
 
+or open `http://linkerd-viz.local:54321`
+
 ---
 
 cf.
 
-- [Generating your own mTLS root certificates | Linkerd](https://linkerd.io/2.12/tasks/generate-certificates/)
-- [Installing Linkerd with Helm | Linkerd](https://linkerd.io/2.12/tasks/install-helm/)
-- [roboll/helmfile: Deploy Kubernetes Helm Charts](https://github.com/roboll/helmfile)
-- [Getting Started | Linkerd](https://linkerd.io/2.12/getting-started/)
+- [Generating your own mTLS root certificates | Linkerd](https://linkerd.io/2.14/tasks/generate-certificates/)
+- [Installing Linkerd with Helm | Linkerd](https://linkerd.io/2.14/tasks/install-helm/)
+- [smallstep/cli: 🧰 A zero trust swiss army knife for working with X509, OAuth, JWT, OATH OTP, etc.](https://github.com/smallstep/cli)
+- [helmfile/helmfile: Declaratively deploy your Kubernetes manifests, Kustomize configs, and Charts as Helm releases. Generate all-in-one manifests for use with ArgoCD.](https://github.com/helmfile/helmfile)
+- [casey/just: 🤖 Just a command runner](https://github.com/casey/just)
