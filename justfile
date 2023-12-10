@@ -51,3 +51,7 @@ expect-backend-a:
 expect-backend-b:
 	curl -sX POST -H 'x-request-id: alternative' \
 	podinfo.local:54321/echo | grep -o 'PODINFO_UI_MESSAGE=. backend'
+
+booksapp:
+	kubectl apply -f booksapp/namespace.yaml && \
+	kubectl -n booksapp apply -f https://run.linkerd.io/booksapp.yml
