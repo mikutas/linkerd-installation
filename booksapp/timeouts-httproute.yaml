@@ -1,0 +1,20 @@
+apiVersion: policy.linkerd.io/v1beta3
+kind: HTTPRoute
+metadata:
+  name: timeout-authors
+  namespace: booksapp
+spec:
+  parentRefs:
+    - name: authors
+      kind: Service
+      group: core
+      port: 7001
+  rules:
+  - matches:
+    - path:
+        type: RegularExpression
+        value: /authors/[^/]*\.json"
+      method: GET
+    timeouts:
+      request: 600ms
+      backendRequest: 300ms
