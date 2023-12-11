@@ -54,4 +54,5 @@ expect-backend-b:
 
 booksapp:
 	kubectl apply -f booksapp/namespace.yaml && \
-	kubectl -n booksapp apply -f https://run.linkerd.io/booksapp.yml
+	kubectl -n booksapp apply -f https://run.linkerd.io/booksapp.yml && \
+	kubectl -n booksapp apply -f booksapp/ingress.yaml
