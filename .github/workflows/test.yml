@@ -22,8 +22,8 @@ jobs:
     steps:
       - uses: mikutas/my-aqua-installer@v0.2.0
 
-      - name: Create k8s Kind Cluster
-        uses: helm/kind-action@v1.8.0
+      - name: Create k8s Cluster
+        run: just create-cluster
 
       - run: helm plugin install https://github.com/databus23/helm-diff
 
