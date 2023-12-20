@@ -9,8 +9,8 @@ releases:
   namespace: linkerd-viz
   createNamespace: true
   chart: linkerd/linkerd-viz
-  # https://github.com/linkerd/linkerd2/blob/stable-2.14.6/viz/charts/linkerd-viz/Chart.yaml
-  version: 30.12.7
+  # https://github.com/linkerd/linkerd2/blob/stable-2.14.7/viz/charts/linkerd-viz/Chart.yaml
+  version: 30.12.8
   values:
   - dashboard:
       enforcedHostRegexp: linkerd-viz.local
