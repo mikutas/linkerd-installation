@@ -14,6 +14,13 @@
       "matchPackagePatterns": ["linkerd2", "linkerd-crds", "linkerd-control-plane", "linkerd-viz"],
       // https://docs.renovatebot.com/noise-reduction/#package-grouping
       "groupName": "linkerd"
+    },
+    {
+      "matchPackageNames": [
+        "actions/download-artifact",
+        "actions/upload-artifact"
+      ],
+      "groupName": "artifact-actions"
     }
   ],
   "customManagers": [
