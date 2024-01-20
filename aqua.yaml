@@ -14,4 +14,4 @@ packages:
 - name: helmfile/helmfile@v0.160.0
 - name: k3d-io/k3d@v5.6.0
 - name: linkerd/linkerd2@stable-2.14.9
-- name: smallstep/cli@v0.25.1
+- name: smallstep/cli@v0.25.2
