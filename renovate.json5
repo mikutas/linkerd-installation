@@ -35,10 +35,5 @@
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "linkerd/linkerd2"
     }
-  ],
-  // https://docs.renovatebot.com/modules/manager/helmfile/
-  "registryAliases": {
-    "linkerd": "https://helm.linkerd.io/stable",
-    "linkerd-edge": "https://helm.linkerd.io/edge"
-  }
+  ]
 }
