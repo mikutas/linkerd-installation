@@ -7,7 +7,7 @@ releases:
   namespace: test
   chart: podinfo/podinfo
   createNamespace: false
-  version: 6.5.4
+  version: 6.6.0
   values:
   - ui:
       message: A backend
@@ -21,7 +21,7 @@ releases:
   namespace: test
   chart: podinfo/podinfo
   createNamespace: false
-  version: 6.5.4
+  version: 6.6.0
   values:
   - ui:
       message: B backend
@@ -30,7 +30,7 @@ releases:
   namespace: test
   chart: podinfo/podinfo
   createNamespace: false
-  version: 6.5.4
+  version: 6.6.0
   values:
   - backend: http://backend-a-podinfo:9898/env
   - ingress:
