@@ -12,6 +12,6 @@ packages:
 - name: casey/just@1.25.2
 - name: helm/helm@v3.14.4
 - name: helmfile/helmfile@v0.163.1
-- name: k3d-io/k3d@v5.6.2
+- name: k3d-io/k3d@v5.6.3
 - name: linkerd/linkerd2@stable-2.14.10
 - name: smallstep/cli@v0.26.0
