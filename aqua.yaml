@@ -11,7 +11,7 @@ registries:
 packages:
 - name: casey/just@1.29.1
 - name: helm/helm@v3.15.2
-- name: helmfile/helmfile@v0.165.0
+- name: helmfile/helmfile@v0.166.0
 - name: k3d-io/k3d@v5.6.3
 - name: linkerd/linkerd2@stable-2.14.10
 - name: smallstep/cli@v0.26.2
