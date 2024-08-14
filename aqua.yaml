@@ -10,7 +10,7 @@ registries:
   ref: v4.213.1 # renovate: depName=aquaproj/aqua-registry
 packages:
 - name: casey/just@1.34.0
-- name: helm/helm@v3.15.3
+- name: helm/helm@v3.15.4
 - name: helmfile/helmfile@v0.167.1
 - name: k3d-io/k3d@v5.7.3
 - name: linkerd/linkerd2@stable-2.14.10
