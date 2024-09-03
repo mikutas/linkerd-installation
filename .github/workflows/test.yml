@@ -6,7 +6,7 @@ jobs:
   certificates:
     runs-on: ubuntu-latest
     steps:
-      - uses: mikutas/my-aqua-installer@v0.2.1
+      - uses: mikutas/my-aqua-installer@main
       - run: just ca
       - run: just issuer
       - uses: actions/upload-artifact@v4
@@ -20,7 +20,7 @@ jobs:
     needs: ["certificates"]
     runs-on: ubuntu-latest
     steps:
-      - uses: mikutas/my-aqua-installer@v0.2.1
+      - uses: mikutas/my-aqua-installer@main
 
       - name: Create k8s Cluster
         run: just create-cluster
