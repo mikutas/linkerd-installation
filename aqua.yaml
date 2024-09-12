@@ -6,12 +6,13 @@
 #   enabled: true
 #   require_checksum: true
 registries:
-- type: standard
-  ref: v4.219.1 # renovate: depName=aquaproj/aqua-registry
+  - type: standard
+    ref: v4.219.1 # renovate: depName=aquaproj/aqua-registry
 packages:
-- name: casey/just@1.35.0
-- name: helm/helm@v3.15.4
-- name: helmfile/helmfile@v0.167.1
-- name: k3d-io/k3d@v5.7.3
-- name: linkerd/linkerd2@stable-2.14.10
-- name: smallstep/cli@v0.27.2
+  - name: casey/just@1.35.0
+  - name: helm/helm@v3.15.4
+  - name: helmfile/helmfile@v0.167.1
+  - name: homeport/dyff@v1.9.0
+  - name: k3d-io/k3d@v5.7.3
+  - name: linkerd/linkerd2@stable-2.14.10
+  - name: smallstep/cli@v0.27.2
