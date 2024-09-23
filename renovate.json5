@@ -11,9 +11,14 @@
       "versioning": "regex:(?<compatibility>stable|edge)-(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)?"
     },
     {
-      "matchPackagePatterns": ["linkerd2", "linkerd-crds", "linkerd-control-plane", "linkerd-viz"],
       // https://docs.renovatebot.com/noise-reduction/#package-grouping
-      "groupName": "linkerd"
+      "groupName": "linkerd",
+      "matchPackageNames": [
+        "/linkerd2/",
+        "/linkerd-crds/",
+        "/linkerd-control-plane/",
+        "/linkerd-viz/"
+      ]
     },
     {
       "matchPackageNames": [
