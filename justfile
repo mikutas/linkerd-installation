@@ -9,6 +9,14 @@ ca:
 	step certificate create root.linkerd.cluster.local linkerd-control-plane/ca.crt linkerd-control-plane/ca.key \
 	--profile root-ca --no-password --insecure
 
+ca-secret:
+	kubectl create ns linkerd || true
+	kubectl create secret tls \
+	linkerd-trust-anchor \
+	--cert=linkerd-control-plane/ca.crt \
+	--key=linkerd-control-plane/ca.key \
+	--namespace=linkerd
+
 issuer:
 	step certificate create identity.linkerd.cluster.local linkerd-control-plane/issuer.crt linkerd-control-plane/issuer.key \
 	--profile intermediate-ca --not-after 8760h --no-password --insecure \

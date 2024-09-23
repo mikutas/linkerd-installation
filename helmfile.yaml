@@ -5,6 +5,6 @@ helmDefaults:
 
 helmfiles:
 - path: linkerd-crds/helmfile.yaml
-- path: linkerd-control-plane/helmfile.yaml
+- path: linkerd-control-plane/helmfile-local.yaml
 - path: linkerd-viz/helmfile.yaml
 - path: podinfo/helmfile.yaml
