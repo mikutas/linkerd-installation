@@ -7,7 +7,7 @@ delete-cluster:
 
 ca:
 	step certificate create root.linkerd.cluster.local linkerd-control-plane/ca.crt linkerd-control-plane/ca.key \
-	--profile root-ca --no-password --insecure
+	--profile root-ca --no-password --insecure -f
 
 ca-secret:
 	kubectl create ns linkerd || true
