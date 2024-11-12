@@ -8,6 +8,6 @@ releases:
 - name: linkerd-crds
   namespace: linkerd
   createNamespace: true
-  chart: linkerd/linkerd-crds
+  chart: linkerd-edge/linkerd-crds
   # https://github.com/linkerd/linkerd2/blob/stable-2.14.10/charts/linkerd-crds/Chart.yaml
   version: 1.8.0
