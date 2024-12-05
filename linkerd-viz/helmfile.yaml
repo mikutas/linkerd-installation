@@ -9,7 +9,7 @@ releases:
   namespace: linkerd-viz
   createNamespace: true
   chart: linkerd-edge/linkerd-viz
-  # https://github.com/linkerd/linkerd2/blob/stable-2.14.10/viz/charts/linkerd-viz/Chart.yaml
+  # https://github.com/linkerd/linkerd2/blob/edge-23.9.4/viz/charts/linkerd-viz/Chart.yaml
   version: 30.13.0-edge
   values:
   - dashboard:
