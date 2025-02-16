@@ -9,7 +9,7 @@ releases:
   namespace: linkerd
   createNamespace: false
   chart: linkerd-edge/linkerd-control-plane
-  # https://github.com/linkerd/linkerd2/blob/edge-23.10.4/charts/linkerd-control-plane/Chart.yaml
+  # https://github.com/linkerd/linkerd2/blob/edge-23.12.4/charts/linkerd-control-plane/Chart.yaml
   version: 1.17.5-edge
   set:
   - name: identityTrustAnchorsPEM
