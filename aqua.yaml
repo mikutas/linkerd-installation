@@ -15,4 +15,4 @@ packages:
   - name: homeport/dyff@v1.10.1
   - name: k3d-io/k3d@v5.8.3
   - name: linkerd/linkerd2@edge-23.10.4
-  - name: smallstep/cli@v0.28.5
+  - name: smallstep/cli@v0.28.6
