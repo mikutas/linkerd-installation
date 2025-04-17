@@ -1,1 +1,1 @@
-caBundle|tls\.crt|tls\.key
+caBundle|tls\.crt|tls\.key|metadata.annotations.linkerd.io/created-by|spec.template.metadata.annotations.checksum/config|metadata.labels.app.kubernetes.io/version
