@@ -55,6 +55,15 @@ jobs:
       artifact-dl-name: ${{ matrix.artifact-dl-name }}
       artifact-dl-path: ${{ matrix.artifact-dl-path }}
 
+  polaris:
+    needs: ["diff"]
+    strategy:
+      matrix:
+        release-name: [linkerd-control-plane, linkerd-crds, linkerd-viz]
+    uses: mikutas/helmfiles/.github/workflows/reusable-polaris.yml@main
+    with:
+      changed-dir: ${{ matrix.release-name }}
+
   status-check:
     runs-on: ubuntu-latest
     needs:
