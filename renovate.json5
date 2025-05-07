@@ -1,43 +1,43 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "github>mikutas/my-renovate-config"
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  extends: [
+    'github>mikutas/my-renovate-config',
   ],
-  "packageRules": [
+  packageRules: [
     {
-      "matchDepNames": ["linkerd/linkerd2"],
-      // https://docs.renovatebot.com/modules/versioning/
-      "versioning": "regex:(?<compatibility>stable|edge)-(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)?"
+      matchDepNames: [
+        'linkerd/linkerd2',
+      ],
+      versioning: 'regex:(?<compatibility>stable|edge)-(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)?',
     },
     {
-      // https://docs.renovatebot.com/noise-reduction/#package-grouping
-      "groupName": "linkerd",
-      "matchPackageNames": [
-        "/linkerd2/",
-        "/linkerd-crds/",
-        "/linkerd-control-plane/",
-        "/linkerd-viz/"
-      ]
+      groupName: 'linkerd',
+      matchPackageNames: [
+        '/linkerd2/',
+        '/linkerd-crds/',
+        '/linkerd-control-plane/',
+        '/linkerd-viz/',
+      ],
     },
     {
-      "matchPackageNames": [
-        "actions/download-artifact",
-        "actions/upload-artifact"
+      matchPackageNames: [
+        'actions/download-artifact',
+        'actions/upload-artifact',
       ],
-      "groupName": "artifact-actions"
-    }
+      groupName: 'artifact-actions',
+    },
   ],
-  "customManagers": [
+  customManagers: [
     {
-      "customType": "regex",
-      "fileMatch": [
-        "helmfile.*\\.yaml"
+      customType: 'regex',
+      managerFilePatterns: [
+        '/helmfile.*\\.yaml/',
       ],
-      "matchStrings": [
-        "(?<depName>.*?)\\/blob\\/(?<currentValue>(?<compatibility>stable|edge)-(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)?)"
+      matchStrings: [
+        '(?<depName>.*?)\\/blob\\/(?<currentValue>(?<compatibility>stable|edge)-(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)?)',
       ],
-      "datasourceTemplate": "github-releases",
-      "depNameTemplate": "linkerd/linkerd2"
-    }
-  ]
+      datasourceTemplate: 'github-releases',
+      depNameTemplate: 'linkerd/linkerd2',
+    },
+  ],
 }
