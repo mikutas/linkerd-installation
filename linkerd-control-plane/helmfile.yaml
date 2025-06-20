@@ -16,3 +16,5 @@ releases:
     file: ca.crt
   - name: identity.issuer.scheme
     value: kubernetes.io/tls
+  values:
+    - values.yaml
