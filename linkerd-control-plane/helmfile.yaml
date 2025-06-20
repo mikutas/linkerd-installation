@@ -12,8 +12,8 @@ releases:
   # https://github.com/linkerd/linkerd2/blob/edge-24.7.2/charts/linkerd-control-plane/Chart.yaml
   version: 2024.7.2
   set:
-  - name: identityTrustAnchorsPEM
-    file: ca.crt
+  - name: identity.externalCA
+    value: true
   - name: identity.issuer.scheme
     value: kubernetes.io/tls
   values:
