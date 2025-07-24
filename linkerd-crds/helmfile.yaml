@@ -9,5 +9,5 @@ releases:
   namespace: linkerd
   createNamespace: true
   chart: linkerd-edge/linkerd-crds
-  # https://github.com/linkerd/linkerd2/blob/edge-24.7.2/charts/linkerd-crds/Chart.yaml
-  version: 2024.7.2
+  # https://github.com/linkerd/linkerd2/blob/edge-24.10.5/charts/linkerd-crds/Chart.yaml
+  version: 2024.10.5
