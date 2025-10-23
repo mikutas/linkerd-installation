@@ -9,8 +9,8 @@ releases:
   namespace: linkerd
   createNamespace: false
   chart: linkerd-edge/linkerd-control-plane
-  # https://github.com/linkerd/linkerd2/blob/edge-24.10.5/charts/linkerd-control-plane/Chart.yaml
-  version: 2024.10.5
+  # https://github.com/linkerd/linkerd2/blob/edge-25.2.3/charts/linkerd-control-plane/Chart.yaml
+  version: 2025.2.3
   set:
   - name: identity.externalCA
     value: true
