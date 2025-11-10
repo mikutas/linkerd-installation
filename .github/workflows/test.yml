@@ -9,7 +9,7 @@ jobs:
       - uses: mikutas/my-aqua-installer@main
       - run: just ca
       - run: just issuer
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: certs
           path: |
@@ -27,7 +27,7 @@ jobs:
 
       - run: helm plugin install https://github.com/databus23/helm-diff
 
-      - uses: actions/download-artifact@v5
+      - uses: actions/download-artifact@v6
         with:
           name: certs
           path: linkerd-control-plane
