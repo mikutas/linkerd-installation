@@ -1,4 +1,4 @@
-# https://linkerd.io/2-edge/tasks/automatically-rotating-control-plane-tls-credentials/#save-the-signing-key-pair-as-a-secret
+# https://linkerd.io/2-edge/tasks/automatically-rotating-control-plane-tls-credentials/#4-configure-cert-manager-to-create-the-identity-issuer-certificate
 ---
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
