@@ -18,3 +18,7 @@ releases:
     value: kubernetes.io/tls
   values:
     - values.yaml
+
+- name: linkerd-tls-credentials
+  namespace: linkerd
+  chart: ./tls-credentials
