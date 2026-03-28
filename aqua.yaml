@@ -9,7 +9,7 @@ registries:
   - type: standard
     ref: v4.487.0 # renovate: depName=aquaproj/aqua-registry
 packages:
-  - name: casey/just@1.47.1
+  - name: casey/just@1.48.1
   - name: helm/helm@v3.20.0
   - name: helmfile/helmfile@v1.4.2
   - name: k3d-io/k3d@v5.8.3
