@@ -7,7 +7,7 @@
 #   require_checksum: true
 registries:
   - type: standard
-    ref: v4.510.0 # renovate: depName=aquaproj/aqua-registry
+    ref: v4.512.0 # renovate: depName=aquaproj/aqua-registry
 packages:
   - name: casey/just@1.50.0
   - name: helm/helm@v3.20.0
