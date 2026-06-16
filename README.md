@@ -1,5 +1,7 @@
 # linkerd-installation
 
+migrated to https://github.com/mikutas/helmfiles
+
 ## Generating certificates
 
 ```sh
